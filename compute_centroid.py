@@ -1,15 +1,13 @@
 # compute_centroid.py
-#
-# 这个脚本用于从一个简单的 XYZ 格式文件中读取原子坐标，并计算分子的几何中心 (centroid)。
 
 import sys
 
 def compute_centroid(xyz_file):
     """
-    1. 打开 XYZ 文件，忽略前两行（原子数目和注释）
-    2. 逐行读取原子标签和坐标
-    3. 计算所有原子坐标的平均值
-    4. 输出几何中心
+    1. Open XYZ file, ignore the first two lines (number of atoms and comments)
+    2. Read atomic labels and coordinates line by line
+    3. Calculate the average of all atomic coordinates
+    4. Output geometric center
     """
     total_x = 0.0
     total_y = 0.0
@@ -17,13 +15,13 @@ def compute_centroid(xyz_file):
     count = 0
 
     with open(xyz_file, 'r') as f:
-        lines = f.readlines()[2:]  # 跳过前两行
+        lines = f.readlines()[2:]  # Skip the first two lines
 
     for line in lines:
         parts = line.split()
         if len(parts) < 4:
             continue
-        # 部分 XYZ 文件会有注释等，请做好异常处理
+        # Some XYZ files may have comments，handle exceptions properly
         try:
             x = float(parts[1])
             y = float(parts[2])
