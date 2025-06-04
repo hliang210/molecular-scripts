@@ -4,10 +4,10 @@ import sys
 
 def compute_centroid(xyz_file):
     """
-    1. Open XYZ file, ignore the first two lines (number of atoms and comments)
-    2. Read atomic labels and coordinates line by line
-    3. Calculate the average of all atomic coordinates
-    4. Output geometric center
+    # 1. Open XYZ file, ignore the first two lines (number of atoms and comments)
+    # 2. Read atomic labels and coordinates line by line
+    # 3. Calculate the average of all atomic coordinates
+    # 4. Output geometric center
     """
     total_x = 0.0
     total_y = 0.0
